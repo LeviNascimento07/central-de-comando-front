@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:8080';
+const BASE_URL = 'https://central-de-comando-back.onrender.com';
 
 function showAlert(msg, tipo = 'danger') {
   document.getElementById('alert-box').innerHTML =
