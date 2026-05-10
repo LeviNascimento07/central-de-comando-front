@@ -1,0 +1,120 @@
+:root {
+  --sgi-primary: #1e3a5f;
+  --sgi-primary-dark: #152b47;
+  --sgi-accent: #2980b9;
+}
+
+body {
+  background-color: #f0f4f8;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+.navbar-sgi {
+  background-color: var(--sgi-primary) !important;
+}
+.navbar-sgi .navbar-brand,
+.navbar-sgi .nav-link {
+  color: #ffffff !important;
+}
+.navbar-sgi .nav-link:hover,
+.navbar-sgi .nav-link.active {
+  color: #a8c8f0 !important;
+}
+.navbar-sgi .navbar-toggler {
+  border-color: rgba(255,255,255,.3);
+}
+
+/* Auth cards */
+.card-auth {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(30,58,95,.15);
+}
+.card-auth .card-header {
+  background: linear-gradient(135deg, var(--sgi-primary) 0%, var(--sgi-accent) 100%);
+  border-radius: 16px 16px 0 0 !important;
+  padding: 2rem;
+}
+
+/* Buttons */
+.btn-sgi {
+  background-color: var(--sgi-primary);
+  border-color: var(--sgi-primary);
+  color: #fff;
+}
+.btn-sgi:hover {
+  background-color: var(--sgi-primary-dark);
+  border-color: var(--sgi-primary-dark);
+  color: #fff;
+}
+
+/* Hero dashboard */
+.hero-dashboard {
+  background: linear-gradient(135deg, var(--sgi-primary) 0%, var(--sgi-accent) 100%);
+  color: #fff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Stat cards */
+.stat-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
+  transition: transform .2s;
+}
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+.stat-icon {
+  font-size: 2.2rem;
+  opacity: .85;
+}
+
+/* Tables */
+.table-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
+  overflow: hidden;
+}
+.table thead {
+  background-color: var(--sgi-primary);
+  color: #fff;
+}
+
+/* Page header */
+.page-header {
+  background: linear-gradient(135deg, var(--sgi-primary) 0%, var(--sgi-accent) 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Modal header */
+.modal-header-sgi {
+  background-color: var(--sgi-primary);
+  color: #fff;
+}
+.modal-header-sgi .btn-close {
+  filter: invert(1);
+}
+
+/* Alerts inline */
+#alert-box { min-height: 48px; }
+
+/* Login logo */
+.logo-circle {
+  width: 72px;
+  height: 72px;
+  background: rgba(255,255,255,.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 2rem;
+}

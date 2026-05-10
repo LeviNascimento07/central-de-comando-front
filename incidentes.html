@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SGI – Incidentes</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-sgi fixed-top shadow-sm">
+    <div class="container-xl">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="home.html">
+        <i class="bi bi-shield-check fs-5"></i> SGI
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="home.html"><i class="bi bi-house me-1"></i>Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="usuarios.html"><i class="bi bi-people me-1"></i>Usuários</a></li>
+          <li class="nav-item"><a class="nav-link" href="equipamentos.html"><i class="bi bi-pc-display me-1"></i>Equipamentos</a></li>
+          <li class="nav-item"><a class="nav-link active" href="incidentes.html"><i class="bi bi-exclamation-triangle me-1"></i>Incidentes</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <span class="text-white small"><i class="bi bi-person-circle me-1"></i><span id="nome-usuario"></span></span>
+          <button class="btn btn-outline-light btn-sm" onclick="sair()"><i class="bi bi-box-arrow-right me-1"></i>Sair</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-xl mt-5 pt-4 pb-5">
+    <!-- Header -->
+    <div class="page-header d-flex align-items-center justify-content-between flex-wrap gap-2">
+      <div>
+        <h4 class="mb-0 fw-bold"><i class="bi bi-exclamation-triangle me-2"></i>Incidentes</h4>
+        <small class="opacity-75">Gerenciamento de incidentes</small>
+      </div>
+      <button class="btn btn-light fw-semibold" data-bs-toggle="modal" data-bs-target="#modalIncidente" onclick="abrirModalIncluir()">
+        <i class="bi bi-plus-lg me-1"></i>Incluir
+      </button>
+    </div>
+
+    <div id="alert-box" class="mb-3"></div>
+
+    <!-- Tabela -->
+    <div class="card table-card">
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead>
+              <tr>
+                <th class="ps-4">ID</th>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Equipamento</th>
+                <th>Status</th>
+                <th class="text-center">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-incidentes">
+              <tr><td colspan="6" class="text-center py-4 text-muted">Carregando...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Incluir/Editar -->
+  <div class="modal fade" id="modalIncidente" tabindex="-1" aria-labelledby="modalIncidenteLabel">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header modal-header-sgi">
+          <h5 class="modal-title" id="modalIncidenteLabel">Incidente</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div id="modal-alert"></div>
+          <input type="hidden" id="inc-id" />
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Descrição</label>
+            <textarea id="inc-descricao" class="form-control" rows="3" placeholder="Descreva o incidente"></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Equipamento</label>
+            <select id="inc-equipamento" class="form-select">
+              <option value="">Selecione...</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Status</label>
+            <select id="inc-status" class="form-select">
+              <option value="">Selecione...</option>
+              <option>Aberto</option>
+              <option>Em Andamento</option>
+              <option>Resolvido</option>
+              <option>Fechado</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-sgi" onclick="salvarIncidente()">
+            <i class="bi bi-save me-1"></i>Salvar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/incidentes.js"></script>
+</body>
+</html>

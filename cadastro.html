@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SGI – Cadastro</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body class="d-flex align-items-center justify-content-center min-vh-100 py-4">
+
+  <div class="container" style="max-width:480px">
+    <div class="card card-auth">
+      <div class="card-header text-center text-white">
+        <div class="logo-circle"><i class="bi bi-person-plus"></i></div>
+        <h4 class="mb-0 fw-bold">Criar Conta</h4>
+        <small class="opacity-75">Sistema de Gestão de Incidentes</small>
+      </div>
+      <div class="card-body p-4">
+        <div id="alert-box"></div>
+        <form id="form-cadastro" novalidate>
+          <div class="mb-3">
+            <label for="nome" class="form-label fw-semibold">Nome Completo</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-person"></i></span>
+              <input type="text" id="nome" class="form-control" placeholder="Seu nome completo" required />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="login" class="form-label fw-semibold">Login de acesso</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-at"></i></span>
+              <input type="text" id="login" class="form-control" placeholder="Ex: joao.silva" required />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="profissao" class="form-label fw-semibold">Profissão</label>
+            <select id="profissao" class="form-select" required>
+              <option value="">Selecione...</option>
+              <option>Analista N1</option>
+              <option>Analista N2</option>
+              <option>Especialista N3</option>
+              <option>Gestor de TI</option>
+              <option>Desenvolvedor</option>
+              <option>Adm. Redes</option>
+              <option>Adm. Sistemas</option>
+              <option>Estagiário</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="senha" class="form-label fw-semibold">Senha</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-lock"></i></span>
+              <input type="password" id="senha" class="form-control" placeholder="Mínimo 6 caracteres" required />
+            </div>
+          </div>
+          <div class="mb-4">
+            <label for="confirmar" class="form-label fw-semibold">Confirmar Senha</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+              <input type="password" id="confirmar" class="form-control" placeholder="Repita a senha" required />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-sgi w-100 py-2 fw-semibold">
+            <i class="bi bi-check-circle me-2"></i>Cadastrar
+          </button>
+        </form>
+        <hr />
+        <p class="text-center mb-0 small">
+          Já tem conta? <a href="index.html" class="fw-semibold">Entrar</a>
+        </p>
+      </div>
+    </div>
+    <p class="text-center text-muted small mt-3">&copy; 2025 SGI – Todos os direitos reservados</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/cadastro.js"></script>
+</body>
+</html>
